@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("YOUR_PUBLIC_KEY");
+  emailjs.init("service_65o3kxs");
 })();
 
 function sendForm() {
@@ -8,7 +8,7 @@ function sendForm() {
   const message = document.getElementById("message").value;
   const reason = document.getElementById("reason").value;
 
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+  emailjs.send("hyeYZ58wpy1jetnjc", "template_9z790xq", {
     subject: first + " " + last,
     message: message,
     reason: reason,

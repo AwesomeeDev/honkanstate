@@ -2,11 +2,11 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: white;
-  background: linear-gradient(120deg, #000000, #1a0000, #000000);
+  background: #000;
   overflow-x: hidden;
 }
 
-/* HERO SECTION */
+/* HERO WITH BANNER */
 .hero {
   height: 100vh;
   display: flex;
@@ -14,17 +14,35 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  background: url("banner.jpg") center/cover no-repeat;
+  position: relative;
 }
 
-.hero p {
-  opacity: 0.8;
+/* DARK OVERLAY */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
 }
 
-/* GLOW TEXT */
+.hero * {
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px gold);
+}
+
+/* TITLE GLOW */
 .glow {
   font-size: 3rem;
   color: gold;
-  text-shadow: 0 0 10px gold, 0 0 20px red;
+  text-shadow: 0 0 10px gold, 0 0 25px red;
   animation: pulse 2s infinite;
 }
 
@@ -42,18 +60,17 @@ body {
   background: rgba(255, 215, 0, 0.05);
   border: 1px solid rgba(255, 215, 0, 0.2);
   border-radius: 16px;
-  backdrop-filter: blur(8px);
   text-align: center;
+  backdrop-filter: blur(8px);
 }
 
-/* ANIMATION BASE */
+/* ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(60px);
   transition: all 1s ease;
 }
 
-/* ACTIVE STATE */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);

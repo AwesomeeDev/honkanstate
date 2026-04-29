@@ -5,27 +5,39 @@ body {
   color: gold;
 }
 
+/* Each section fills the screen */
 section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 40px;
+  text-align: center;
 }
 
-/* Hidden by default */
+/* HERO styling */
+.hero {
+  background: linear-gradient(black, darkred);
+}
+
+/* Hidden state for animation */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: 1s ease;
+  transform: translateY(60px);
+  transition: all 1s ease;
 }
 
-/* When visible */
+/* Visible state */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-.hero {
-  background: linear-gradient(black, darkred);
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
 }

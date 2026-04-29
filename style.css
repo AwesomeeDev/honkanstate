@@ -1,12 +1,40 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: black;
   color: white;
-  background: #000;
   overflow-x: hidden;
 }
 
-/* HERO WITH BANNER */
+/* TOP BAR (MILITARY HUD STYLE) */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid rgba(255,215,0,0.3);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 999;
+}
+
+.toplogo {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  filter: drop-shadow(0 0 8px gold);
+}
+
+.toptext {
+  color: gold;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -17,6 +45,8 @@ body {
 
   background: url("banner.jpg") center/cover no-repeat;
   position: relative;
+
+  padding-top: 60px; /* prevents overlap with topbar */
 }
 
 /* DARK OVERLAY */
@@ -31,25 +61,11 @@ body {
   position: relative;
 }
 
-/* LOGO */
-.logo {
-  width: 120px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px gold);
-}
-
-/* TITLE GLOW */
+/* GLOW TEXT */
 .glow {
   font-size: 3rem;
   color: gold;
   text-shadow: 0 0 10px gold, 0 0 25px red;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { text-shadow: 0 0 10px gold; }
-  50% { text-shadow: 0 0 25px red; }
-  100% { text-shadow: 0 0 10px gold; }
 }
 
 /* SECTIONS */

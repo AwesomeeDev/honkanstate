@@ -1,31 +1,15 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: black;
-  color: gold;
-}
+const sections = document.querySelectorAll(".reveal");
 
-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.2
+});
 
-/* Hidden by default */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 1s ease;
-}
-
-/* When visible */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero {
-  background: linear-gradient(black, darkred);
-}
+sections.forEach(section => {
+  observer.observe(section);
+});

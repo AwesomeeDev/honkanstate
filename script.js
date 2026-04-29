@@ -1,7 +1,7 @@
 const sections = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
     }
@@ -10,6 +10,6 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.2
 });
 
-sections.forEach(section => {
+sections.forEach((section) => {
   observer.observe(section);
 });
